@@ -1,0 +1,20 @@
+<mat-form-field [ngClass]="{'search-input': isSearchBar(), 'chips-input': !isSearchBar(), inValid: !valid()}" appearance="outline">
+  <mat-chip-grid #chipList>
+    @for (chip of chips; track chip) {
+      <mat-chip-row (removed)="remove(chip)">
+        {{ chip }}
+        <button matChipRemove>
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </mat-chip-row>
+    }
+    <input
+      matInput
+      [placeholder]="placeholder()|translate"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)"
+      autocomplete="off" />
+  </mat-chip-grid>
+  <mat-hint *ngIf="hint()">{{ hint()|translate }}</mat-hint>
+</mat-form-field>

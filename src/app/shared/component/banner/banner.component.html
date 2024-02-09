@@ -1,0 +1,56 @@
+<mat-toolbar class="p-2" style="border-bottom: solid 1px rgba(0,0,0,.12);">
+  @if (loginStatus()) {
+    <button mat-icon-button (click)="sideMenuToggle()"><i class="fa-solid fa-bars fa-sm"></i></button>
+  }
+  <span class="ms-2" style="font-size: 26px;">ASUS Control Center</span>
+  <span class="spacer"></span>
+  <span class="me-2">16:44</span>
+  <div class="vertical-line"></div>
+
+  <!-- <mat-button-toggle-group [(ngModel)]="mode" name="themeMode" (change)="test()">
+    <mat-button-toggle value="theme-light">Light</mat-button-toggle>
+    <mat-button-toggle value="theme-dark">Dark</mat-button-toggle>
+  </mat-button-toggle-group> -->
+
+  @if (loginStatus()) {
+    <button mat-icon-button><i class="fa-solid fa-face-smile fa-sm"></i></button>
+  }
+  <button mat-icon-button [cdkMenuTriggerFor]="langsOption"><i class="fa-solid fa-globe fa-sm"></i></button>
+  <button mat-icon-button><i class="fa-solid fa-circle-info fa-sm"></i></button>
+  @if (loginStatus()) {
+    <button mat-icon-button><i class="fa-solid fa-envelope fa-sm"></i></button>
+  }
+
+  <button mat-icon-button (click)="test3()"><i [ngClass]="getThemeIconClass()"></i></button>
+
+  <div class="vertical-line"></div>
+  @if (loginStatus()) {
+    <button mat-button [cdkMenuTriggerFor]="menu" class="ms-1"><i class="fa-solid fa-user fa-xl me-2"></i>{{ userName }}</button>
+  }
+
+  <!-- <mat-menu #accountMenu>
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu> -->
+
+  <ng-template #menu>
+    <div class="example-menu mat-elevation-z2" cdkMenu>
+      <button class="example-menu-item" cdkMenuItem (click)="logout()">Logout</button>
+      <div class="example-menu-item" cdkMenuItem>
+        <mat-icon fontSet="fas" fontIcon="fa-paint-brush"></mat-icon>
+          <mat-slide-toggle
+            [color]="'primary'"
+            [checked]="isThemeDark()"
+            (change)="test2($event)" >
+          </mat-slide-toggle>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template  #langsOption>
+    <div class="example-menu mat-elevation-z2" cdkMenu>
+      @for (lang of langs; track lang;) {
+        <button class="example-menu-item" cdkMenuItem>{{ lang }}</button>
+      }
+    </div>
+  </ng-template>
+</mat-toolbar>

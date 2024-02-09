@@ -1,0 +1,82 @@
+<div class="demo-page px-3">
+  <mat-form-field [appearance]="'outline'">
+    <mat-label>Choose an option</mat-label>
+    <mat-select [(value)]="optionSelected" (valueChange)="changeSelect()">
+      @for (item of demoList; track item.view) {
+        <mat-option [value]="item.value">
+          {{ item.view }}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  @switch (optionSelected) {
+    @case ('Table') {
+      <div>
+        <h1 class="mb-1">Table</h1>
+        <mat-divider class="pb-3"></mat-divider>
+        <div class="mb-2">
+          <button mat-raised-button color="primary" class="me-2" (click)="setTableData()">Get Data</button>
+          <button mat-raised-button color="accent" (click)="clearTableData()">Clear Data</button>
+        </div>
+        <app-table [tableInfo]="tableInfo" [groupByColumns]="[]" [height]="'300px'" [columnsPanel]="true" />
+      </div>
+    }
+    @case ('Dialog') {
+      <div>
+        <h1 class="mb-1">Dialog</h1>
+        <mat-divider class="pb-3"></mat-divider>
+        <div class="mb-2">
+          <button mat-raised-button color="primary" class="me-2" (click)="openComponentDialog()">Open dialog with component</button>
+          <button mat-raised-button color="primary" class="me-2" (click)="openTemplateDialog()">Open dialog with template</button>
+          <button mat-raised-button color="primary" class="me-2" (click)="openStringDialog()">Open dialog with string</button>
+        </div>
+      </div>
+    }
+    @case ('Event') {
+      <div>
+        <h1 class="mb-1">Event</h1>
+        <mat-divider class="pb-3"></mat-divider>
+      </div>
+    }
+    @case ('i18n') {
+      <div>
+        <h1 class="mb-1">i18n</h1>
+        <mat-divider class="pb-3"></mat-divider>
+        <a href="https://github.com/ngx-translate/core" target="_blank">Doc</a>
+        <div>{{'i18n_Fields' | translate}}</div>
+      </div>
+    }
+    @case ('Icon') {
+      <div>
+        <h1 class="mb-1">FontIcon</h1>
+        <mat-divider class="pb-3"></mat-divider>
+        <div style="font-size: 40px;word-wrap: break-word;" class="mb-2">
+          <h1 class="mb-1">Acc Icon</h1>
+          <i class="iconacc-access"></i>
+          <i class="iconacc-accounts"></i>
+          <i class="iconacc-add-on-cards"></i>
+        </div>
+        <br>
+        <div style="font-size: 40px;word-wrap: break-word;">
+          <h1 class="mb-1">Fontawesome</h1>
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+    }
+    @case ('Chart') {
+      <div>
+        <canvas id="canvas"></canvas>
+      </div>
+    }
+    @case ('Chips Input') {
+      <div style="width: 100%;">
+        <app-chips-input [id]="'test-chips-input'" [placeholder]="'test...'"></app-chips-input>
+      </div>
+    }
+  }
+</div>
+
+<ng-template #testTemp let-data>
+  <p>{{data}}</p>
+</ng-template>

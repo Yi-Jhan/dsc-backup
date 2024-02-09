@@ -1,0 +1,18 @@
+$dark-primary: mat.define-palette($azul-palette, 700, 300, 900);
+$dark-accent: mat.define-palette($dark-pastel-green-palette, 500, 100, 800);
+$dark-warn: mat.define-palette($chili-red-palette, 700, 100, 900);
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $dark-primary,
+    accent: $dark-accent,
+    warn: $dark-warn,
+  )
+));
+
+.theme-dark {
+  @include mat.all-component-colors($dark-theme);
+  @include table-theme($dark-theme-colors);
+  @include scrollbar-theme($dark-theme-colors);
+  @include chips-input-theme($dark-theme-colors)
+}

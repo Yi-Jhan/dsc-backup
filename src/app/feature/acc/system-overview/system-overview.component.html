@@ -1,0 +1,59 @@
+<div class="container-fluid" style="width: auto;">
+  <div class="row g-3">
+    <div class="col">
+      <mat-card >
+        <mat-card-content class="mat-elevation-z0">
+          <mat-card-title>Connection</mat-card-title>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card>
+        <mat-card-content>
+          <mat-card-title>Hardware Sensor</mat-card-title>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card>
+        <mat-card-content>
+          <mat-card-title>Utilization</mat-card-title>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card>
+        <mat-card-content>
+          <mat-card-title>Add-on Card</mat-card-title>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col">
+      <button (click)="test()">get data</button>
+      <button (click)="test2()">clear</button>
+      <button (click)="test3()">navigate</button>
+    </div>
+
+  </div>
+
+  <br />
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>filters</mat-label>
+      <input matInput>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+  </form>
+  <br />
+
+  <div class="row">
+    <div class="col">
+      <app-table [tableInfo]="tableInfo" [groupByColumns]="[]" [height]="'300px'" [columnsPanel]="true" />
+    </div>
+  </div>
+</div>
+
+

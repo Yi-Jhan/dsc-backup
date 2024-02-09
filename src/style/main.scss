@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@include mat.core();
+
+@import "./bootstrap-grid";
+@import "./common";
+@import "./color";
+@import "./color-dark";
+
+// #region custom component scss file
+@import "./sidemenu";
+@import "./dialog";
+@import "./scrollbar";
+@import "../app/shared/component/table/table.component.scss";
+@import "../app/shared/component/chips-input/chips-input.component.scss";
+// #endregion
+
+// #region theme
+@import "./custom-material-light";
+@import "./custom-material-dark";
+// #endregion
+
+@import "./fonts/acc-icon/acc-icon.css";

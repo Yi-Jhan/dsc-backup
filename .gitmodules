@@ -1,0 +1,3 @@
+[submodule "cicd"]
+	path = cicd
+	url = ../infrastructure/dcs-cicd.git

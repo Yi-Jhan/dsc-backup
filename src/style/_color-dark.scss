@@ -1,0 +1,104 @@
+// #region Color Define
+$dark-blue:     #0070cc !default;
+$dark-indigo:   #6610f2 !default;
+$dark-purple:   #6f42c1 !default;
+$dark-pink:     #d63384 !default;
+$dark-red:      #d33b27 !default;
+$dark-orange:   #fd7e14 !default;
+$dark-yellow:   #F7B911 !default;
+$dark-green:    #3ab73f !default;
+$dark-teal:     #20c997 !default;
+$dark-cyan:     #06bdd4 !default;
+// #endregion
+
+// #region theme color define
+$dark-theme-colors: (
+  text:                       $white,
+
+  // status color define
+  primary:                    $dark-blue,
+  secondary:                  $gray-600,
+  success:                    $dark-green,
+  info:                       $dark-cyan,
+  warning:                    $dark-yellow,
+  danger:                     $dark-red,
+
+  // scroll bar color define
+  scrollbar-shadow-color:     rgba($black, 0.3),
+  scrollbar-bg-color:         #8b8b8b,
+  scrollbar-thumb-bg-color:   #555,
+
+  // table color define
+  table-color-border:         #ffffff1f,
+  table-color-header-row:     #202020,
+  table-color-row:            #1d2024,
+  table-color-row-even:       #212428,
+  table-color-row-hover:      #1d202480,
+  table-color-group-header:   #272727,
+
+  // rack color define
+  rack-border-color-1:        #222222,
+  rack-border-color-2:        rgb(3, 3, 3),
+  rack-border-color-3:        rgb(64, 76, 88),
+  rack-container-orange:      rgb(206, 101, 59),
+  rack-container-blue:        rgb(10, 49, 100),
+  rack-container-black:       #0000,
+  rack-indicator-locator:     rgb(48, 100, 212),
+
+  // test stage color define
+  stage-shadow-color-1:       rgba(0, 0, 0, 0.5),
+  stageBox-background-color:  #1F5673,
+  toolList-color:             #55b2d4,
+  testBox-color:              cadetblue
+);
+// #endregion
+
+$dark-pastel-green-palette: (
+  50:  #e7f6e8,
+  100: #c7e9c6,
+  200: #a2dba1,
+  300: #7acd7b,
+  400: #5bc25d,
+  500: $dark-green,
+  600: #30a835,
+  700: #22952a,
+  800: #11841e,
+  900: #006505,
+  contrast: (
+    50:  rgba($black, 0.87),
+    100: rgba($black, 0.87),
+    200: rgba($black, 0.87),
+    300: rgba($black, 0.87),
+    400: rgba($black, 0.87),
+    500: rgba($black, 0.87),
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+$chili-red-palette: (
+  50:  #ffeced,
+  100: #ffced0,
+  200: #f09d97,
+  300: #e7786f,
+  400: #ef5b49,
+  500: #f24e2c,
+  600: #e5452d,
+  700: $dark-red,
+  800: #c63520,
+  900: #b72b13,
+  contrast: (
+    50:  rgba($black, 0.87),
+    100: rgba($black, 0.87),
+    200: rgba($black, 0.87),
+    300: rgba($black, 0.87),
+    400: rgba($black, 0.87),
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white,
+  )
+);

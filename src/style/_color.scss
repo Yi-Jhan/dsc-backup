@@ -1,0 +1,142 @@
+// #region Color Define
+$white:         #ffffff !default;
+$black:         #000000 !default;
+$gray-100:      #f8f9fa !default;
+$gray-200:      #e9ecef !default;
+$gray-300:      #dee2e6 !default;
+$gray-400:      #ced4da !default;
+$gray-500:      #adb5bd !default;
+$gray-600:      #6c757d !default;
+$gray-700:      #495057 !default;
+$gray-800:      #2d2d2d !default;
+$gray-900:      #1f1f1f !default;
+$light-black:   #112b46 !default;
+
+$blue:          #0070cc !default;
+$indigo:        #6610f2 !default;
+$purple:        #6f42c1 !default;
+$pink:          #d63384 !default;
+$red:           #ec5c44 !default;
+$orange:        #F5B22F !default;
+$yellow:        #f8bf45 !default;
+$green:         #64bc4c !default;
+$teal:          #00a84f !default;
+$cyan:          #00c2e0 !default;
+// #endregion
+
+// #region theme color define
+$theme-colors: (
+  text:                       $gray-800,
+
+  // status
+  primary:                    $blue,
+  secondary:                  $gray-400,
+  success:                    $green,
+  info:                       $cyan,
+  warning:                    $yellow,
+  danger:                     $red,
+
+  // scroll bar color define
+  scrollbar-shadow-color:     rgba($light-black, 0.15),
+  scrollbar-bg-color:         $gray-100,
+  scrollbar-thumb-bg-color:   $gray-400,
+
+  // table color define
+  table-color-border:         darken($gray-100, 20%),
+  table-color-header-row:     darken($gray-100, 5%),
+  table-color-row:            $white,
+  table-color-row-even:       $gray-100,
+  table-color-row-hover:      darken($gray-100, 5%),
+  table-color-group-header:   rgba($gray-800, 0.04),
+
+  // rack color define
+  rack-border-color-1:        #222222,
+  rack-border-color-2:        rgb(3, 3, 3),
+  rack-border-color-3:        rgb(64, 76, 88),
+  rack-container-orange:      rgb(206, 101, 59),
+  rack-container-blue:        rgb(10, 49, 100),
+  rack-container-black:       #0000,
+  rack-indicator-locator:     rgb(48, 100, 21),
+
+  // test stage color define
+  stage-shadow-color-1:       rgba(0, 0, 0, 0.5),
+  stageBox-background-color:  #1F5673,
+  toolList-color:             #55b2d4,
+  testBox-color:              cadetblue
+);
+// #endregion
+
+$azul-palette: (
+  50:  #e2f1fc,
+  100: #b9dcf9,
+  200: #8cc6f5,
+  300: #5eb0f1,
+  400: #399fef,
+  500: #0690ed,
+  600: #0582df,
+  700: $blue,
+  800: #005fba,
+  900: #00429b,
+  contrast: (
+    50:  rgba($black, 0.87),
+    100: rgba($black, 0.87),
+    200: rgba($black, 0.87),
+    300: rgba($black, 0.87),
+    400: rgba($black, 0.87),
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white,
+  )
+);
+
+$mantis-palette: (
+  50:  #eef9eb,
+  100: #d6f0cc,
+  200: #bbe7ab,
+  300: #9fdc89,
+  400: #88d56e,
+  500: #73cd54,
+  600: $green,
+  700: #50a742,
+  800: #3d9338,
+  900: #117025,
+  contrast: (
+    50:  rgba($black, 0.87),
+    100: rgba($black, 0.87),
+    200: rgba($black, 0.87),
+    300: rgba($black, 0.87),
+    400: rgba($black, 0.87),
+    500: rgba($black, 0.87),
+    600: rgba($black, 0.87),
+    700: rgba($black, 0.87),
+    800: $white,
+    900: $white,
+  )
+);
+
+$tomato-palette: (
+  50:  #fdedef,
+  100: #fbd2d4,
+  200: #e9a29f,
+  300: #de807b,
+  400: $red,
+  500: #ec5d44,
+  600: #dd5442,
+  700: #cb4b3c,
+  800: #bd4535,
+  900: #ad3e2c,
+  contrast: (
+    50:  rgba($black, 0.87),
+    100: rgba($black, 0.87),
+    200: rgba($black, 0.87),
+    300: rgba($black, 0.87),
+    400: rgba($black, 0.87),
+    500: rgba($black, 0.87),
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white,
+  )
+);
