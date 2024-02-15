@@ -1,44 +1,51 @@
-.mdc-dialog__title {
-  padding: 12px 24px;
-  border-bottom: 1px solid rgba(0,0,0,.12);;
+@mixin dialog-theme($theme-colors) {
+  .dialog-container {
+    background: map-get($theme-colors, dialog-bg-color);
 
-  &::before {
-    height: 22px;
-  }
+    .mdc-dialog__title {
+      padding: 12px 24px;
+      border-bottom: 1px solid rgba(0,0,0,.12);;
 
-  .dialog-subtitle {
-    font-size: 14px;
-    height: 16px;
-    line-height: 16px;
-    color: rgba(0, 0, 0, 0.65);
+      &::before {
+        height: 22px;
+      }
+
+      .dialog-subtitle {
+        font-size: 14px;
+        height: 16px;
+        line-height: 16px;
+        color: map-get($theme-colors, text);
+      }
+    }
+
+    .mdc-dialog__content {
+      padding: 12px 24px;
+
+      &.dialog-small {
+        min-width: 300px;
+      }
+
+      &.dialog-normal {
+        min-width: 600px;
+      }
+
+      &.dialog-large {
+        min-width: 900px;
+      }
+    }
+
+    // .mdc-dialog__title.primary {
+    //   border-bottom: 1px solid #c2d5e4;
+    // }
+
+    .mdc-dialog__actions {
+      padding: 12px;
+      border-top: 1px solid rgba(0,0,0,.12);;
+    }
+
+    // .dialog-close {
+
+    // }
+
   }
 }
-
-.mdc-dialog__content {
-  padding: 12px 24px;
-
-  &.dialog-small {
-    min-width: 300px;
-  }
-
-  &.dialog-normal {
-    min-width: 600px;
-  }
-
-  &.dialog-large {
-    min-width: 900px;
-  }
-}
-
-// .mdc-dialog__title.primary {
-//   border-bottom: 1px solid #c2d5e4;
-// }
-
-.mdc-dialog__actions {
-  padding: 12px;
-  border-top: 1px solid rgba(0,0,0,.12);;
-}
-
-// .dialog-close {
-
-// }

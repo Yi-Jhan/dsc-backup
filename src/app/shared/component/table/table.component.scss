@@ -28,7 +28,6 @@
     .table-outline {
       flex: 1 1 auto;
       position: relative;
-      // border: 1px solid $dark-table-color-border;
       border: 1px solid map-get($theme-colors, table-color-border);
     }
 
@@ -69,7 +68,7 @@
 
     .side-bar {
       display: flex;
-      // margin-left: 2px;
+      margin-left: 1px;
 
       .side-button-panel {
         width: 26px;
@@ -187,7 +186,7 @@
           }
 
           &.moveIn {
-            border: 2px dotted rgba(255, 0, 0, 0.3);
+            border: 2px dotted map-get($theme-colors, table-color-border);
             margin: 2px;
           }
         }
