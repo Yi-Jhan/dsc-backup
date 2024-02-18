@@ -16,4 +16,5 @@ $dark-theme: mat.define-dark-theme((
   @include scrollbar-theme($dark-theme-colors);
   @include chips-input-theme($dark-theme-colors);
   @include dialog-theme($dark-theme-colors);
+  @include sidemenu-theme($dark-theme-colors);
 }

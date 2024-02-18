@@ -104,7 +104,7 @@
   <!-- Columns Panel -->
   @if (columnsPanel()) {
     <div class="side-bar">
-      <div class="column-panel" [ngClass]="{'panel-close': !isColumnPanelExpanded}">
+      <div class="column-panel" [ngClass]="{'panel-close': !columnPanelExpanded()}">
         <div class="column-select">
           <div class="title">{{'i18n_Fields' | translate}}</div>
           <div  class="column-content"
@@ -149,8 +149,8 @@
       <div class="side-button-panel">
         <button class="side-button-button"
                 mat-ripple [matRippleCentered]="true"
-                (click)="isColumnPanelExpanded=!isColumnPanelExpanded">
-          @if (isColumnPanelExpanded) {
+                (click)="columnPanelExpanded.set(!columnPanelExpanded())">
+          @if (columnPanelExpanded()) {
             <i class="fa-solid fa-down-left-and-up-right-to-center fa-fw"></i>
           }
           @else {

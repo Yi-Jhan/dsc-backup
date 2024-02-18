@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
+// @use '@angular/material-experimental' as matx;
 @include mat.core();
 
 @import "./bootstrap-grid";
@@ -9,11 +10,11 @@
 
 // #region custom component scss file
 @import "./sidemenu";
-@import "./dialog";
 @import "./scrollbar";
 @import "../app/shared/component/table/table.component.scss";
 @import "../app/shared/component/chips-input/chips-input.component.scss";
 @import "../app/shared/component/dialog/dialog.component.scss";
+@import "../app/shared/component/sidemenu/sidemenu.component.scss";
 // #endregion
 
 // #region theme

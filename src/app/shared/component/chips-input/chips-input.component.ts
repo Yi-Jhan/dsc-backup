@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject, input } from '@angular/core';
+import { Component, OnInit, inject, input, model } from '@angular/core';
 import { SharedModule } from '../../shared.module';
 import { ENTER } from '@angular/cdk/keycodes';
 import { EventService } from '../../service';
@@ -21,13 +21,12 @@ export class ChipsInputComponent implements OnInit {
   id = input.required<string>();
   placeholder = input<string>('');
   hint = input<string>('');
-  enteredValue = input<Array<string>>([]);
   isSearchBar = input<boolean>(false);
   valid = input<boolean>(true);
+  chips = model<Array<string>>([]);
 
   eventService = inject(EventService);
   separatorKeysCodes: number[] = [ENTER];
-  chips = this.enteredValue();
 
   constructor() { }
 
@@ -50,24 +49,24 @@ export class ChipsInputComponent implements OnInit {
   add(event: any): void {
     const value = (event.value || '').trim();
 
-    if (value && _.indexOf(this.chips, value) === -1) {
-      this.chips.push(value);
+    if (value && _.indexOf(this.chips(), value) === -1) {
+      this.chips().push(value);
     }
 
     event.chipInput!.clear();
-    this.eventService.emit({id: this.id(), eventName: ChipsInputEvent.InputChange, data: this.chips});
+    this.eventService.emit({id: this.id(), eventName: ChipsInputEvent.InputChange, data: this.chips()});
   }
 
   remove(filter: string): void {
-    _.remove(this.chips, item => {
+    _.remove(this.chips(), item => {
       return item === filter;
     });
 
-    this.eventService.emit({id: this.id(), eventName: ChipsInputEvent.InputChange, data: this.chips});
+    this.eventService.emit({id: this.id(), eventName: ChipsInputEvent.InputChange, data: this.chips()});
   }
 
   removeAll(): void {
-    this.chips = [];
-    this.eventService.emit({id: this.id(), eventName: ChipsInputEvent.InputChange, data: this.chips});
+    this.chips.set([]);
+    this.eventService.emit({id: this.id(), eventName: ChipsInputEvent.InputChange, data: this.chips()});
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChanges, input } from '@angular/core';
+import { Component, OnInit, SimpleChanges, input, model } from '@angular/core';
 import { TableVirtualScrollDataSource, TableVirtualScrollModule } from 'ng-table-virtual-scroll';
 import { SelectionModel } from '@angular/cdk/collections';
 import { SortDirection } from '@angular/material/sort';
@@ -38,7 +38,7 @@ export class TableComponent implements OnInit {
   height = input<number | string>('350px');
   isLoading = input<boolean>(false);
   clickRowSelected = input<boolean>(false);
-  columnPanelExpanded = input<boolean>(false);
+  columnPanelExpanded = model<boolean>(false);
   showNoDataMessage = input<boolean>(true);
   columnsPanel = input<boolean>(true);
   noDataMessage = input<string>('i18n_NoData');
@@ -50,7 +50,6 @@ export class TableComponent implements OnInit {
   moveInGroupContent = false;
   sortActive = '';
   sortDirection: SortDirection = '';
-  isColumnPanelExpanded = this.columnPanelExpanded();
 
   constructor(
     private tableService: TableService,

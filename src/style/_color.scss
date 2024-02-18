@@ -44,6 +44,10 @@ $theme-colors: (
   scrollbar-bg-color:         $gray-100,
   scrollbar-thumb-bg-color:   $gray-400,
 
+  // sidemenu color define
+  sidemenu-active-bg-color:   rgba(204, 204, 204),
+  sidemenu-active-left:       rgba(139, 137, 133),
+
   // table color define
   table-color-border:         darken($gray-100, 20%),
   table-color-header-row:     darken($gray-100, 5%),

@@ -16,5 +16,6 @@ $light-theme: mat.define-light-theme((
   @include scrollbar-theme($theme-colors);
   @include chips-input-theme($theme-colors);
   @include dialog-theme($theme-colors);
+  @include sidemenu-theme($theme-colors);
 }
 

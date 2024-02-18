@@ -1,6 +1,6 @@
 <mat-form-field [ngClass]="{'search-input': isSearchBar(), 'chips-input': !isSearchBar(), inValid: !valid()}" appearance="outline">
   <mat-chip-grid #chipList>
-    @for (chip of chips; track chip) {
+    @for (chip of chips(); track chip) {
       <mat-chip-row (removed)="remove(chip)">
         {{ chip }}
         <button matChipRemove>
